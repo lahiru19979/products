@@ -40,7 +40,8 @@ class productcontroller extends Controller
                 if($validator->fails()){
 
                     return response()->json([
-                        'errors' =>422,
+                        'errors' =>$validator->errors(),
+
                     ]);
                 }
 
@@ -60,7 +61,7 @@ class productcontroller extends Controller
                                 ]);
                             }else{
                                 return response()->json([
-                                    'massage' =>"products created unsuccesfully",
+                                    'message' =>"products created unsuccesfully",
                                 ]);
                             }
                         }
